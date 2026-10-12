@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#edf0ff">
+    <title>مذكّرتي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/mini-app/styles.css?v=2">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="/mini-app/app.js?v=3" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="#" aria-label="My Notes">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 5.5h18v21H7zM11 11h10M11 16h10M11 21h6"/></svg>
+        </a>
+        <div class="top-controls">
+          <button class="small-control language-control" id="language-toggle" type="button" aria-label="Change language">EN</button>
+          <button class="small-control theme-control" id="theme-toggle" type="button" aria-label="Change appearance">
+            <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+            <span id="theme-label"></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="welcome-block">
+        <p class="eyebrow" id="welcome-eyebrow"></p>
+        <h1 id="page-title"></h1>
+        <p class="welcome-copy" id="page-subtitle"></p>
+      </section>
+
+      <div class="section-heading">
+        <h2 id="section-title"></h2>
+        <button class="add-button" id="add-button" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          <span id="add-label"></span>
+        </button>
+      </div>
+
+      <section class="entry-list" id="entry-list" aria-live="polite"></section>
+      <p class="status-message" id="status-message" role="status"></p>
+    </main>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Sections"></nav>
+
+    <dialog class="editor-dialog" id="editor-dialog">
+      <form id="editor-form" method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow" id="dialog-eyebrow"></p>
+            <h2 id="dialog-title"></h2>
+          </div>
+          <button class="icon-button close-button" id="close-dialog" type="button" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <div id="form-fields"></div>
+        <div class="dialog-actions">
+          <button class="secondary-button" id="cancel-button" type="button"></button>
+          <button class="primary-button" id="save-button" type="submit"></button>
+        </div>
+      </form>
+    </dialog>
+
+    <template id="empty-state-template">
+      <div class="empty-state">
+        <span class="empty-icon"></span>
+        <h3></h3>
+        <p></p>
+      </div>
+    </template>
+  </body>
+</html>
